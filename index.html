@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GST — Global Service Technology</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">GST</a>
+
+      <nav class="nav" id="mainNav">
+        <a href="#home" class="nav-link active">Главная</a>
+        <a href="#catalog" class="nav-link">Каталог</a>
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="#game" class="nav-link">Сборка</a>
+        <a href="#contact" class="nav-link">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="btn ghost" aria-label="Переключить тему">Тема</button>
+        <button id="burger" class="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Надёжные IT‑решения для бизнеса</h1>
+          <p>Проектирование, поставки и техподдержка IT‑оборудования — от серверов до рабочих станций. Быстро, прозрачно, с гарантией.</p>
+          <div class="hero-cta">
+            <a href="#catalog" class="btn primary">Каталог товаров</a>
+            <a href="#contact" class="btn outline">Связаться</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="images/hero-laptop.png" alt="IT equipment illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog -->
+    <section id="catalog" class="section">
+      <div class="container">
+        <h2 class="section-title">Популярные товары</h2>
+        <p class="section-sub">Выбор профессионалов — проверенные комплектующие и готовые решения.</p>
+
+        <div class="catalog-grid">
+          <article class="card">
+            <img class="card-img" src="images/cpu.png" alt="CPU">
+            <div class="card-body">
+              <h3>Процессоры AMD RYZEN</h3>
+              <p>Высокая производительность для серверных и рабочих задач.</p>
+              <div class="card-actions">
+                <button class="btn primary small">Купить</button>
+                <button class="btn ghost small">Подробнее</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-img" src="images/gpu.png" alt="GPU">
+            <div class="card-body">
+              <h3>Видеокарты Geforce </h3>
+              <p>Оптимален для визуализации, рендеринга и Игр.</p>
+              <div class="card-actions">
+                <button class="btn primary small">Купить</button>
+                <button class="btn ghost small">Подробнее</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-img" src="images/server.png" alt="Server">
+            <div class="card-body">
+              <h3>Видео Наблюдение </h3>
+              <p>Надёжные Камеры и системы видео наблюдения.</p>
+              <div class="card-actions">
+                <button class="btn primary small">Купить</button>
+                <button class="btn ghost small">Подробнее</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Услуги</h2>
+        <p class="section-sub">Комплексный подход: от подбора до установки и поддержки.</p>
+
+        <div class="services-grid">
+          <div class="service">
+            <h4>Поставка</h4>
+            <p>Официальная поставка оборудования от надёжных производителей.</p>
+          </div>
+          <div class="service">
+            <h4>Интеграция</h4>
+            <p>Интеграция решений под особенности вашей инфраструктуры.</p>
+          </div>
+          <div class="service">
+            <h4>Поддержка</h4>
+            <p>Сервисное обслуживание 24/7, мониторинг и SLA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple interactive assembly (game) -->
+    <section id="game" class="section">
+      <div class="container">
+        <h2 class="section-title">Интерактив: собери систему</h2>
+        <p class="section-sub">Перетащи комплектующие в корпус и узнай, собрана ли система корректно.</p>
+
+        <div class="game-wrap">
+          <div class="case" id="case">
+            <div class="slot slot-cpu" data-slot="cpu">CPU</div>
+            <div class="slot slot-gpu" data-slot="gpu">GPU</div>
+            <div class="slot slot-ram" data-slot="ram">RAM</div>
+          </div>
+
+          <div class="parts" id="parts">
+            <div class="part" draggable="true" data-part="cpu">CPU</div>
+            <div class="part" draggable="true" data-part="gpu">GPU</div>
+            <div class="part" draggable="true" data-part="ram">RAM</div>
+            <div class="part" draggable="true" data-part="psu">PSU</div>
+          </div>
+        </div>
+
+        <div class="game-controls">
+          <button id="checkBtn" class="btn primary">Проверить сборку</button>
+          <div id="gameMessage" class="game-message" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact-card">
+        <h2>Свяжитесь с нами</h2>
+        <form id="contactForm" class="contact-form" novalidate>
+          <input type="text" name="name" id="name" placeholder="Имя" required>
+          <input type="email" name="email" id="email" placeholder="Email" required>
+          <textarea name="message" id="message" placeholder="Сообщение" rows="5" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Отправить</button>
+            <button type="reset" class="btn ghost">Очистить</button>
+          </div>
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© GST — Global Service Technology. Все права защищены.</p>
+      <p class="muted">Дизайн вдохновлён светлой минималистичной эстетикой.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
